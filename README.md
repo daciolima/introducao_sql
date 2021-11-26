@@ -94,3 +94,11 @@ select count(*) qtd FROM film f WHERE description like '%Student%'
 -- 23 Retorna todos os filmes e suas respectivas categorias onde o rate do fil é superio a 3.00
 select f.title, c.name from film f, category c, film_category fc where f.rental_rate > 3.00 and f.film_id = fc.film_id and fc.category_id = c.category_id
 ```
+```sql
+-- 24 Retorna lista de atores que participaram do mesmo filme
+select * from actor a inner join actor_info ai2 on a.actor_id  = ai2.actor_id where ai2.film_info like '%LORD ARIZONA%'
+```
+```sql
+-- 25 Retorna os 10 primeiros clientes com quantia inferior a 3
+select c.first_name, p.amount from customer c , payment p where c.customer_id = p.customer_id and p.amount < 3.00 limit 10
+```
