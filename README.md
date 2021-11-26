@@ -85,7 +85,7 @@ select c.first_name, c.last_name from  customer c where exists (select 1 from re
 -- 21 Retorna relação de nomes dos clientes que não possuem um filme alugado no momento
 select c.first_name, c.last_name from  customer c where not exists (select 1 from rental r where c.customer_id = r.customer_id and r.return_date is not null);
 ```
-### -- MAIS 10 CONSULTAS
+### MAIS 10 CONSULTAS
 ```sql
 -- 22 Retorna quantidade de filme que contei um determinada palavra
 select count(*) qtd FROM film f WHERE description like '%Student%'
