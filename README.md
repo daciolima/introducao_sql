@@ -116,3 +116,18 @@ select COUNT(*) as qtd_ator_participou from film_list fl where fl.actors like '%
 -- 28 Retorna quantidade de cliente de clientes de uma determinada filial
 select count(*) from store s , customer c where s.store_id = c.store_id and s.store_id = 1
 ```
+```sql
+-- 29 Retorna clientes de uma determinada filial e que mora em um determinado país
+select * from customer_list cl where cl.country like '%Japan%' and sid = 2
+``` 
+```sql
+-- 30 Retorna país que mais tem clientes que alugam filme
+select max(c3.country) as pais_que_mais_aluga from rental r , customer c, address a , city c2 , country c3 
+where r.customer_id = c.customer_id and c.address_id = a.address_id and a.city_id = c2.city_id 
+``` 
+```sql
+-- 31 Retorna a quantidade de filmes de Drama alugados por uma determinada cidade
+select count(*) from film f , film_category fc, category c, rental r , customer c4 , address a , city c2 , country c3 
+where f.film_id = fc.film_id and fc.category_id = c.category_id and c."name" like '%Drama%' and r.customer_id = c4.customer_id 
+and c4.address_id = a.address_id and a.city_id = c2.city_id and c2.city like '%Juazeiro do Norte%'
+```
