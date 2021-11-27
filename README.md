@@ -133,4 +133,4 @@ and c4.address_id = a.address_id and a.city_id = c2.city_id and c2.city like '%J
 ```
 
 ### Diagrama ER
-![plot](DIagramaER .png)
+![plot](./DiagramaER .png)
