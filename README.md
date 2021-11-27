@@ -102,3 +102,17 @@ select * from actor a inner join actor_info ai2 on a.actor_id  = ai2.actor_id wh
 -- 25 Retorna os 10 primeiros clientes com quantia inferior a 3
 select c.first_name, p.amount from customer c , payment p where c.customer_id = p.customer_id and p.amount < 3.00 limit 10
 ```
+```sql
+-- 26 Retorna atores, filmes e suas categorias dos filmes em determinada lingua
+select a.first_name, f.title, c.name,  l.name from language l, film f , film_actor fa, actor a, film_category fc , category c 
+where l.language_id  = f.language_id and fa.film_id = f.film_id and fc.category_id = c.category_id 
+and a.actor_id = fa.actor_id and l.name like '%English%' 
+```
+```sql
+-- 27 Retorna o numero de vezes que um determinado ator participou de um filme.
+select COUNT(*) as qtd_ator_participou from film_list fl where fl.actors like '%NICK STALLONE%'
+```
+```sql
+-- 28 Retorna quantidade de cliente de clientes de uma determinada filial
+select count(*) from store s , customer c where s.store_id = c.store_id and s.store_id = 1
+```
