@@ -133,4 +133,4 @@ and c4.address_id = a.address_id and a.city_id = c2.city_id and c2.city like '%J
 ```
 
 ### Diagrama ER
-![plot](DiagramaER.png)
+![plot](https://github.com/daciolima/introducao_sql/blob/main/DiagramaER%20.png)
