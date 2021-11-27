@@ -131,3 +131,4 @@ select count(*) from film f , film_category fc, category c, rental r , customer 
 where f.film_id = fc.film_id and fc.category_id = c.category_id and c."name" like '%Drama%' and r.customer_id = c4.customer_id 
 and c4.address_id = a.address_id and a.city_id = c2.city_id and c2.city like '%Juazeiro do Norte%'
 ```
+![plot](./DIagramaER.png)
